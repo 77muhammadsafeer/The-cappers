@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cappers — Street Headwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ───────── NAV ───────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="logo">THE CAPPERS</div>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#colors">Colors</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+      <button class="nav-cta" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+        Order Now <span class="arrow">→</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#shop" class="mob-link">Shop</a>
+      <a href="#colors" class="mob-link">Colors</a>
+      <a href="#about" class="mob-link">About</a>
+      <a href="#order" class="mob-link">Order</a>
+    </div>
+  </nav>
+
+  <!-- ───────── HERO ───────── -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <span class="eyebrow">Fresh Drop · Street Edition</span>
+      <h1 class="hero-title">
+        THE<br>
+        <span class="title-gold">CAP</span><br>
+        <span class="title-coral">GODS.</span>
+      </h1>
+      <p class="hero-sub">Bold colors. Street soul. Every cap is a crown — built for the ones who move different.</p>
+      <div class="hero-btns">
+        <a href="#shop" class="btn btn-gold">Shop the Drop</a>
+        <a href="#order" class="btn btn-ghost">Custom Order</a>
+      </div>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Est. 2026 — Nasirabad, Pakistan</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-frame">
+        <div class="color-bar"></div>
+        <img
+          src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=900&q=85&auto=format&fit=crop"
+          alt="Streetwear cap collection"
+          class="hero-img"
+        />
+        <div class="img-tag">Snapback — Block Logo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── MARQUEE ───────── -->
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+
+  <!-- ───────── SHOP ───────── -->
+  <section class="section" id="shop">
+    <div class="section-header">
+      <span class="section-label">New Collection</span>
+      <h2 class="section-title">LATEST CAPS</h2>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+  </section>
+
+  <!-- ───────── COLORWAYS ───────── -->
+  <section class="palette-section" id="colors">
+    <div class="section-header">
+      <span class="section-label" style="color:var(--teal)">Colorways</span>
+      <h2 class="section-title">PICK YOUR SHADE</h2>
+    </div>
+    <div class="palette-grid" id="palette-grid"></div>
+  </section>
+
+  <!-- ───────── ABOUT ───────── -->
+  <section class="section about-section" id="about">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="accent-tl"></div>
+        <img
+          src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=700&q=85&auto=format&fit=crop"
+          alt="Cap close-up detail"
+        />
+        <div class="accent-br"></div>
+      </div>
+      <div class="about-content">
+        <span class="section-label" style="color:var(--teal)">Our Story</span>
+        <h2 class="about-title">CAPS THAT HIT <span>DIFFERENT.</span></h2>
+        <p class="about-p">
+          The Cappers started on the streets of Nasirabad. We make caps that carry
+          culture — bold colors, premium builds, and a fit that feels made for
+          you. No mass-produced fluff. Just real headwear for real ones.
+        </p>
+        <div class="stats-row">
+          <div class="stat stat-gold">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Caps Sold</div>
+          </div>
+          <div class="stat stat-coral">
+            <div class="stat-num">20+</div>
+            <div class="stat-label">Styles</div>
+          </div>
+          <div class="stat stat-teal">
+            <div class="stat-num">5★</div>
+            <div class="stat-label">Rated</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── ORDER ───────── -->
+  <section class="section order-section" id="order">
+    <div class="section-header">
+      <span class="section-label" style="color:var(--coral)">Place Your Order</span>
+      <h2 class="section-title">GET YOUR CAP</h2>
+    </div>
+    <form class="order-form" id="order-form" onsubmit="submitOrder(event)">
+      <div class="form-group">
+        <label for="fn">Full Name</label>
+        <input type="text" id="fn" placeholder="Your name" required />
+      </div>
+      <div class="form-group">
+        <label for="fp">Phone / WhatsApp</label>
+        <input type="tel" id="fp" placeholder="+92 300 000 0000" required />
+      </div>
+      <div class="form-group">
+        <label for="fc">City</label>
+        <input type="text" id="fc" placeholder="Your city" />
+      </div>
+      <div class="form-group">
+        <label for="fs">Cap Style</label>
+        <select id="fs" required>
+          <option value="">— Select style —</option>
+          <option>Snapback — Block Logo</option>
+          <option>Washed Dad Cap</option>
+          <option>5 Panel Fitted</option>
+          <option>Mesh Trucker</option>
+          <option>Bucket — Street Edition</option>
+          <option>Custom Embroidery</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fco">Color</label>
+        <select id="fco">
+          <option value="">— Pick color —</option>
+          <option>All Black</option>
+          <option>Cream / Off-White</option>
+          <option>Olive Green</option>
+          <option>Navy Blue</option>
+          <option>Coral Red</option>
+          <option>Sand Beige</option>
+          <option>Charcoal Gray</option>
+          <option>Gold</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fq">Quantity</label>
+        <input type="number" id="fq" min="1" max="100" value="1" />
+      </div>
+      <div class="form-group form-full">
+        <label for="fnotes">Notes / Custom Request</label>
+        <textarea id="fnotes" placeholder="Custom embroidery, sizing, special requests..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">PLACE ORDER →</button>
+    </form>
+  </section>
+
+  <!-- ───────── FOOTER ───────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">THE CAPPERS</div>
+      <p class="footer-tagline">Street headwear from Nasirabad, Sindh, Pakistan.</p>
+      <p class="footer-copy">© 2025 The Cappers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
